@@ -18,14 +18,16 @@ body {
 
 button {
     font-family: sans-serif;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
     border: 1px;
     border-radius: 50%;
-    background-color: yellow;
+    background-color: black;
+    color: white;
     margin: 0px;
     height: 70px;
     width: 320px;
+    cursor: pointer;
 }
 
 
