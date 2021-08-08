@@ -4,7 +4,6 @@ html, body {
 }
 
 body {
-    max-width: 960px;
     max-height: 960px;
 }
 
@@ -14,6 +13,7 @@ body {
     align-items: center;
     background-image: linear-gradient(to right, blue, red);
     padding: 20px;
+    min-width: 100%;
 }
 
 button {
@@ -44,5 +44,5 @@ button {
     background-color: black;
     border: 1px solid red;
     height: 100px;
-    width: 700px;
+    width: 100%;
 }

@@ -14,16 +14,14 @@ for(let i=0; i <= 10; i++) {
 
 const main = document.querySelectorAll('.main');
 
-for(let i=0; i <= 10; i++) {
+main.forEach((e) => {
     const canvas = document.createElement('canvas');
-    canvas.classList.add('draw')
-    const ctx = canvas.getContext('2d');
-    main.append(canvas)
-}
+    canvas.setAttribute('class', 'main1');
+    e.appendChild(canvas)
+})
 
-
-// ctx.width = main.innerWidth;
-// ctx.height = main.innerHeight;
+const canvas = document.querySelector('.main1');
+const ctx = canvas.getContext('2d');
 
 
 function mainDraw(e) {
@@ -34,10 +32,9 @@ function mainDraw(e) {
 
     ctx.strokeStyle = 'green';
     ctx.beginPath();
-    ctx.moveTo(lastX, lastY)
+    ctx.moveTo(e.offsetX, e.offsetY)
     ctx.lineTo(e.offsetX, e.offsetY);
     ctx.stroke();
-    [lastX, lastY] = [e.offsetX, e.offsetY];
 
 }
 
