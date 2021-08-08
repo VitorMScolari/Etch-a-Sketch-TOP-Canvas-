@@ -1,17 +1,29 @@
-const container = document.querySelector('#container');
 const button = document.querySelector('.button');
-const ctx = container.getContext("2d");
+const container = document.querySelector('#container');
+// const canvas = document.querySelector('#draw');
+// const ctx = canvas.getContext('2d');
 
 let painting = false;
 
 
-for(let i=0; i < 10; i++) {
+for(let i=0; i <= 10; i++) {
     const divs = document.createElement('div');
     divs.classList.add('main');
-    ctx.appendChild(divs);
+    container.appendChild(divs);
 }
 
 const main = document.querySelectorAll('.main');
+
+for(let i=0; i <= 10; i++) {
+    const canvas = document.createElement('canvas');
+    canvas.classList.add('draw')
+    const ctx = canvas.getContext('2d');
+    main.append(canvas)
+}
+
+
+// ctx.width = main.innerWidth;
+// ctx.height = main.innerHeight;
 
 
 function mainDraw(e) {
