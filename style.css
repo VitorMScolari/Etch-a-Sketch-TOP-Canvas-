@@ -41,6 +41,9 @@ button {
     /* margin-left: 400px;
     margin-right: 400px; */
     justify-content: center;
+    border: lightslategrey;
+    box-shadow: lightslategrey;
+    box-sizing: border-box;
 }
 
 .main {
