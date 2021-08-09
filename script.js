@@ -5,18 +5,41 @@ const canvas = document.createElement('canvas');
 canvas.setAttribute('class', 'canvas');
 container.append(canvas)
 
-canvas.width = container.getBoundingClientRect().width;
-canvas.height = container.getBoundingClientRect().height;
+const containerHeight = container.getBoundingClientRect().height;
+const containerWidth = container.getBoundingClientRect().width;
+
+canvas.setAttribute("style",`height: ${containerHeight}px; width: ${containerWidth}px;`)
 
 const ctx = canvas.getContext('2d');
 
-for (let i=0; i < 10; i++) {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0)';
-    ctx.fillRect(100, 100, 100, 100);
-}
+let count = 10
+
+const column = containerWidth / count;
+const row = containerHeight / count;
+
+// for (let i=0; i <= 10; i++) {
+    
+//     if(i == 0) {
+//         ctx.beginPath();
+//         ctx.fillStyle = 'yellow';
+//         ctx.strokeStyle = 'red';
+//         ctx.fillRect(0, 0, row, column);
+//     } else {
+//         ctx.beginPath();
+//         ctx.fillStyle = 'yellow';
+//         ctx.strokeStyle = 'red';
+//         ctx.fillRect(0 + count, 0 + count, row, column);
+//     }
+    
+
+//     count += count;
+
+// }
 
 
-// let painting = false;
+
+
+let painting = false;
 
 // let count = 0;
 
@@ -57,51 +80,45 @@ for (let i=0; i < 10; i++) {
 
 const main = Array.from(document.querySelectorAll('.main'));
 
-/*
+
 function mainDraw(e) {
     
-    if (!painting) return;
-
-    for(let i=0; i < countTotal; i++) {
-
-    let mainBoard = document.querySelector('.main' + [i]);
-
-    let ctx = mainBoard.getContext('2d');
+    // if (!painting) return;
 
     
-    ctx.lineWidth = 5;
-    ctx.lineCap = 'round'
-    ctx.strokeStyle = 'green';
-
+    // ctx.lineWidth = 5;
+    // ctx.lineCap = 'round'
+    // ctx.strokeStyle = 'green';
 
     ctx.beginPath();
-    ctx.moveTo(e.offsetX, e.offsetY)
-    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.fillStyle = 'yellow';
+    ctx.strokeStyle = 'red';
+    ctx.fillRect(e.offsetX, e.offsetY, row, column);
     ctx.stroke();
 
-    }
+    // ctx.beginPath();
+    // ctx.moveTo(e.offsetX, e.offsetY)
+    // ctx.lineTo(e.offsetX, e.offsetY);
+    // ctx.stroke();
 
 }
 
-function startDrawing() {
-    painting = true;
-}
+// function startDrawing() {
+//     painting = true;
+// }
 
-function stopDrawing(e) {
-    painting = false;
+// function stopDrawing(e) {
+//     painting = false;
     
+//      ctx.beginPath();
+
+// }
 
 
+// main.forEach(main => main.addEventListener('mousemove', mainDraw))
+// main.forEach(main => main.addEventListener('mousedown', startDrawing))
+// main.forEach(main => main.addEventListener('mouseup', stopDrawing))
 
-
-     ctx.beginPath();
-
-    
-}
-
-
-main.forEach(main => main.addEventListener('mousemove', mainDraw))
-main.forEach(main => main.addEventListener('mousedown', startDrawing))
-main.forEach(main => main.addEventListener('mouseup', stopDrawing))
-
-*/
+container.addEventListener('mousemove', mainDraw)
+// container.addEventListener('mousedown', startDrawing)
+// container.addEventListener('mouseup', stopDrawing)
