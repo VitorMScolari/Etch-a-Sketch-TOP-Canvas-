@@ -5,7 +5,7 @@ let painting = false;
 
 let count = 0;
 
-for(let i=0; i < 9; i++) {
+for(let i=0; i < 10; i++) {
     container.style.gridTemplateColumns = `repeat(${i}, 1fr)`
     container.style.gridTemplateRows = `repeat(${i}, 1fr)`
     count++;
@@ -28,22 +28,23 @@ for(let i=0; i < countTotal; i++) {
 }
 
 const containerHeight = container.getBoundingClientRect().height;
+const containerWidth = container.getBoundingClientRect().width;
 
-const sqrContainerHeight = Math.sqrt(containerHeight);
+const canvasHeight = containerHeight / (count + 1);
+const canvasWidth = containerWidth / (count + 1);
 
 
 for(let i=0; i < countTotal; i++) {
 
     let canvas = document.querySelector('.main' + [i]);
     
-    canvas.setAttribute("style",`height: ${sqrContainerHeight}px;`)
-
-    // canvas.style.height = sqrt(containerHeight);
+    canvas.setAttribute("style",`height: ${canvasHeight}px; width: ${canvasWidth}px;`)
 
 }
 
-const main = Array.from(document.querySelectorAll('.main'));
 
+
+const main = Array.from(document.querySelectorAll('.main'));
 
 
 function mainDraw(e) {
@@ -60,7 +61,6 @@ function mainDraw(e) {
     ctx.lineWidth = 5;
     ctx.lineCap = 'round'
     ctx.strokeStyle = 'green';
-    ctx.rect(0, 0, canvas.width, canvas.height)
 
 
     ctx.beginPath();
