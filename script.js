@@ -79,7 +79,7 @@ function startDrawing() {
 function stopDrawing(e) {
     painting = false;
     
-    for(let i=0; i <= countTotal; i++) {
+    for(let i=0; i <= 10; i++) {
 
     let mainBoard = document.querySelector('.main' + [i]);
     let ctx = mainBoard.getContext('2d');
